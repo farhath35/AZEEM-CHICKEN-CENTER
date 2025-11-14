@@ -37,7 +37,7 @@ function sendWhatsAppOrder() {
   orders.push(message);
   localStorage.setItem("orders", JSON.stringify(orders));
 
-  const phone = "919999999999"; // replace with your WhatsApp number
+  const phone = "917799896625"; // replace with your WhatsApp number
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 }
