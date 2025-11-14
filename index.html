@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azeem Chicken Center</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0288d1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="apple-touch-startup-image" href="images/splash-640x1136.png">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Azeem Chicken Center</h1>
+  </header>
+
+  <main>
+    <div id="order-section">
+      <label for="chicken-type">Select Type:</label>
+      <select id="chicken-type">
+        <option value="skin">With Skin</option>
+        <option value="skinless">Skinless</option>
+      </select>
+
+      <label for="amount">Enter Amount (₹):</label>
+      <input type="number" id="amount" placeholder="100">
+
+      <label for="delivery-place">Delivery Place:</label>
+      <input type="text" id="delivery-place" placeholder="Enter your address">
+
+      <label for="delivery-time">Delivery Time:</label>
+      <input type="time" id="delivery-time">
+
+      <button onclick="calculateWeight()">Calculate Weight</button>
+      <button onclick="viewOrders()">View Saved Orders</button>
+      <button onclick="sendWhatsAppOrder()">Order via WhatsApp</button>
+      <button onclick="payNow()">Pay Now</button>
+      <button onclick="displayOffers()">View Offers</button>
+
+      <p id="result"></p>
+    </div>
+
+    <div id="offers-section">
+      <h2>Offers</h2>
+      <div id="offers"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

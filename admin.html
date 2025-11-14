@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azeem Chicken Center Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Azeem Chicken Center - Admin Panel</h1>
+  </header>
+
+  <main id="admin-section">
+    <h2>Set Prices</h2>
+    <label for="skin-price">Price per kg (With Skin ₹):</label>
+    <input type="number" id="skin-price">
+
+    <label for="skinless-price">Price per kg (Skinless ₹):</label>
+    <input type="number" id="skinless-price">
+
+    <button onclick="setPrices()">Update Prices</button>
+    <p id="admin-msg"></p>
+
+    <h2>Add Offers</h2>
+    <label for="offer-title">Offer Title:</label>
+    <input type="text" id="offer-title">
+
+    <label for="offer-image">Offer Image URL:</label>
+    <input type="text" id="offer-image">
+
+    <button onclick="addOffer()">Add Offer</button>
+    <div id="offers"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
