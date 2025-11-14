@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azeem Chicken Center Admin</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Azeem Chicken Center</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Azeem Chicken Center - Admin Panel</h1>
-  </header>
+<header>
+  <h1>Admin Panel - Azeem Chicken Center</h1>
+</header>
 
-  <main id="admin-section">
-    <h2>Set Prices</h2>
-    <label for="skin-price">Price per kg (With Skin ₹):</label>
-    <input type="number" id="skin-price">
+<main>
+  <section id="price-section">
+    <h2>Set Chicken Prices</h2>
+    <label for="price-skin">With Skin (₹/kg):</label>
+    <input type="number" id="price-skin" placeholder="200">
 
-    <label for="skinless-price">Price per kg (Skinless ₹):</label>
-    <input type="number" id="skinless-price">
+    <label for="price-skinless">Skinless (₹/kg):</label>
+    <input type="number" id="price-skinless" placeholder="250">
 
-    <button onclick="setPrices()">Update Prices</button>
-    <p id="admin-msg"></p>
+    <button onclick="savePrices()">Save Prices</button>
+  </section>
 
-    <h2>Add Offers</h2>
+  <section id="offers-section-admin">
+    <h2>Manage Offers</h2>
     <label for="offer-title">Offer Title:</label>
-    <input type="text" id="offer-title">
+    <input type="text" id="offer-title" placeholder="20% off on 2kg+">
 
-    <label for="offer-image">Offer Image URL:</label>
-    <input type="text" id="offer-image">
+    <label for="offer-img">Offer Image URL:</label>
+    <input type="text" id="offer-img" placeholder="images/chicken2.jpg">
 
     <button onclick="addOffer()">Add Offer</button>
-    <div id="offers"></div>
-  </main>
+    <div id="offers-list"></div>
+  </section>
 
-  <script src="script.js"></script>
+  <section id="orders-section">
+    <h2>Customer Orders (WhatsApp)</h2>
+    <ul id="orders-list"></ul>
+  </section>
+</main>
+
+<script src="admin.js"></script>
 </body>
 </html>

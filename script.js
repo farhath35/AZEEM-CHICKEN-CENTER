@@ -1,8 +1,6 @@
-// Default prices
-let prices = { skin: 200, skinless: 250 };
-let offers = [
-  { title: "20% off on 2kg+", imgUrl: "images/chicken2.jpg" }
-];
+// Load prices & offers from localStorage
+let prices = JSON.parse(localStorage.getItem("prices")) || { skin: 200, skinless: 250 };
+let offers = JSON.parse(localStorage.getItem("offers")) || [];
 
 // Display offers
 function displayOffers() {
@@ -25,7 +23,7 @@ function calculateWeight() {
   document.getElementById('result').innerText = `You get ${weight} kg of ${type} chicken.`;
 }
 
-// WhatsApp order
+// WhatsApp order & save locally
 function sendWhatsAppOrder() {
   const type = document.getElementById('chicken-type').value;
   const amount = parseFloat(document.getElementById('amount').value);
@@ -33,6 +31,12 @@ function sendWhatsAppOrder() {
   const time = document.getElementById('delivery-time').value || "ASAP";
   const place = document.getElementById('delivery-place').value || "Not specified";
   const message = `Hello, I want ${weight} kg of ${type} chicken for ₹${amount}. Delivery at: ${place}, Time: ${time}`;
+
+  // Save to localStorage for admin
+  let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+  orders.push(message);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
   const phone = "919999999999"; // replace with your WhatsApp number
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
